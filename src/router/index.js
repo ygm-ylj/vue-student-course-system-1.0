@@ -25,221 +25,230 @@ import ViewCourse from '@/pages/Course/ViewCourse'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      meta: {
-        name: '登录'
-      },
-      component: Login
-    },
-    {
-      path: '/index',
-      component: Index,
-      children: [
+    routes: [
         {
-          path: '/HomePage',
-          /* meta的name主要用来做面包屑 */
-          meta: {
-            name: '主页'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: Home
-            }
-          ]
+            path: '/',
+            meta: {
+                name: '登录'
+            },
+            component: Login
         },
         {
-          path: '/ChooseCourse',
-          meta: {
-            name: '选择专业'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: ChooseCourse
-            }
-          ]
-        },
-        {
-          path: '/ModifyHomePage',
-          meta: {
-            name: '修改主页内容'
-          path: '/ViewSelected',
-          meta: {
-            name: '查看已选'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: ModifyHomePage
-            }
-          ]
-        },
-        // 用户管理
-        {
-          path: '/viewUser',
-          meta: {
-            name: '查看用户'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: viewUser
-            }
-          ]
-        },
-        {
-          path: '/viewStudent',
-          meta: {
-            name: '查看学生'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: viewStudent
-            }
-          ]
-        },
-        {
-          path: '/viewTeacher',
-          meta: {
-            name: '查看教师'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: viewTeacher
-            }
-          ]
-        },
-        {
-          path: '/findUser',
-          meta: {
-            name: '查找用户'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: findUser
-            }
-          ]
-        },
-        {
-          path: '/findStudent',
-          meta: {
-            name: '查找学生'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: findStudent
-            }
-          ]
-        },
-        {
-          path: '/findTeacher',
-          meta: {
-            name: '查找老师'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: findTeacher
-            }
-          ]
-        },
-        {
-          path: '/addUser',
-          meta: {
-            name: '添加用户'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: addUser
-            }
-          ]
-        },
-        {
-          path: '/addStudent',
-          meta: {
-            name: '添加学生'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: addStudent
-            }
-          ]
-        },
-        {
-          path: '/addTeacher',
-          meta: {
-            name: '添加老师'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: addTeacher
-            }
-          ]
-        },
-        // 课程管理
-        {
-          path: '/addCourse',
-          meta: {
-            name: '添加课程'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: addCourse
-            }
-          ]
-        },
-        {
-          path: '/viewCourse',
-          meta: {
-            name: '查看课程'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: viewCourse
-            }
-          ]
-        },
-        {
-          path: '/findCourse',
-          meta: {
-            name: '查找课程'
-          },
-          component: MainContent,
-          children: [
-            {
-              path: '',
-              component: findCourse
-              component: ViewCourse
-            }
-          ]
+            path: '/index',
+            component: Index,
+            children: [
+                {
+                    path: '/HomePage',
+                    /* meta的name主要用来做面包屑 */
+                    meta: {
+                        name: '主页'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: Home
+                        }
+                    ]
+                },
+                {
+                    path: '/ChooseCourse',
+                    meta: {
+                        name: '选择专业'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: ChooseCourse
+                        }
+                    ]
+                },
+                {
+                    path: '/ModifyHomePage',
+                    meta: {
+                        name: '修改主页内容'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: ModifyHomePage
+                        }
+                    ]
+                },
+                // 用户管理
+                {
+                    path: '/viewUser',
+                    meta: {
+                        name: '查看用户'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: viewUser
+                        }
+                    ]
+                },
+                {
+                    path: '/viewStudent',
+                    meta: {
+                        name: '查看学生'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: viewStudent
+                        }
+                    ]
+                },
+                {
+                    path: '/viewTeacher',
+                    meta: {
+                        name: '查看教师'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: viewTeacher
+                        }
+                    ]
+                },
+                {
+                    path: '/findUser',
+                    meta: {
+                        name: '查找用户'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: findUser
+                        }
+                    ]
+                },
+                {
+                    path: '/findStudent',
+                    meta: {
+                        name: '查找学生'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: findStudent
+                        }
+                    ]
+                },
+                {
+                    path: '/findTeacher',
+                    meta: {
+                        name: '查找老师'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: findTeacher
+                        }
+                    ]
+                },
+                {
+                    path: '/addUser',
+                    meta: {
+                        name: '添加用户'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: addUser
+                        }
+                    ]
+                },
+                {
+                    path: '/addStudent',
+                    meta: {
+                        name: '添加学生'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: addStudent
+                        }
+                    ]
+                },
+                {
+                    path: '/addTeacher',
+                    meta: {
+                        name: '添加老师'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: addTeacher
+                        }
+                    ]
+                },
+                // 课程管理
+                {
+                    path: '/addCourse',
+                    meta: {
+                        name: '添加课程'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: addCourse
+                        }
+                    ]
+                },
+                {
+                    path: '/viewCourse',
+                    meta: {
+                        name: '查看课程'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: viewCourse
+                        }
+                    ]
+                },
+                {
+                    path: '/findCourse',
+                    meta: {
+                        name: '查找课程'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: findCourse
+                        }
+                    ]
+                },
+                {
+                    path: '/ViewSelected',
+                    meta: {
+                        name: '查看已选'
+                    },
+                    component: MainContent,
+                    children: [
+                        {
+                            path: '',
+                            component: ViewCourse
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 })
