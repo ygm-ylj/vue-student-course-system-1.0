@@ -8,7 +8,6 @@ import router from './router'
 import axios from 'axios'
 import './axios'
 import {setCookie, getCookie, delCookie} from '@/cookie'
-import store from './store/index'
 
 Vue.prototype.$cookieStore = {setCookie, getCookie, delCookie}
 Vue.prototype.$axios = axios
@@ -25,7 +24,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })
