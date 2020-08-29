@@ -72,7 +72,7 @@ export default {
       console.log(row.courseId)
       console.log('aaaaaaaaaaa')
       this.$axios
-        .get('aDeleteCourse?courseId=' + row.courseId)
+        .get('deleteCourse?courseId=' + row.courseId)
         .then(res => {
           console.log('bbbbbbbbbres')
           console.log( res)
