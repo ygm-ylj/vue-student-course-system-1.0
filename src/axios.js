@@ -3,9 +3,12 @@ import ElementUI from 'element-ui'
 import {setCookie, getCookie, delCookie} from '@/cookie'
 
 axios.defaults.baseURL = 'http://localhost:8080/StudentCourse/'
-axios.defaults.headers.common['Authorization'] = getCookie('Authorization')
 
 axios.interceptors.request.use(config => {
+  if (getCookie('Authorization') != null){
+    config.headers.common.authorization = getCookie('Authorization')
+  }
+  console.log('每次发送请求的token' + config.headers.common.authorization)
   return config
 })
 

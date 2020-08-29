@@ -8,7 +8,9 @@ import router from './router'
 import axios from 'axios'
 import './axios'
 import {setCookie, getCookie, delCookie} from '@/cookie'
+import qs from 'qs'
 
+Vue.prototype.$qs = qs
 Vue.prototype.$cookieStore = {setCookie, getCookie, delCookie}
 Vue.prototype.$axios = axios
 
