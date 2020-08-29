@@ -22,6 +22,13 @@ import findCourse from '@/pages/Administrator/CourseManagement/findCourse'
 
 import ViewCourse from '@/pages/Course/ViewCourse'
 
+import AddCourse from '@/pages/teacher/addCourse'
+import ViewTeaching from '@/pages/teacher/viewCourse'
+import addSomeStudent from '@/pages/teacher/addStudent'
+import viewStudentByCourseId from '@/pages/teacher/viewStudent'
+import PersonalInformation from '@/pages/teacher/PersonalInformation'
+import changePassword from '@/pages/teacher/changePassword'
+
 Vue.use(Router)
 
 export default new Router({
@@ -247,7 +254,85 @@ export default new Router({
                             component: ViewCourse
                         }
                     ]
-                }
+                },
+                {
+                    path: '/PersonalInformation',
+                    meta: {
+                      name: '个人信息模块'
+                    },
+                    component: MainContent,
+                    children: [
+                      {
+                        path: '',
+                        component: PersonalInformation
+                      }
+                    ]
+                  },
+                  {
+                    path: '/ChangePassword',
+                    meta: {
+                      name: '修改密码模块'
+                    },
+                    component: MainContent,
+                    children: [
+                      {
+                        path: '',
+                        component: changePassword
+                      }
+                    ]
+                  },
+                  {
+                    path: '/ViewTeaching',
+                    meta: {
+                      name: '查看教学'
+                    },
+                    component: MainContent,
+                    children: [
+                      {
+                        path: '',
+                        component: ViewTeaching
+                      }
+                    ]
+                  },
+                  {
+                    path: '/AddTeaching',
+                    meta: {
+                      name: '增加教学'
+                    },
+                    component: MainContent,
+                    children: [
+                      {
+                        path: '',
+                        component: AddCourse
+                      }
+                    ]
+                  },
+                  {
+                    path: '/addSomeStudent',
+                    meta: {
+                      name: '添加学生'
+                    },
+                    component: MainContent,
+                    children: [
+                      {
+                        path: '',
+                        component: addSomeStudent
+                      }
+                    ]
+                  },
+                  {
+                    path: '/viewStudentByCourseId',
+                    meta: {
+                      name: '查看学生'
+                    },
+                    component: MainContent,
+                    children: [
+                      {
+                        path: '',
+                        component: viewStudentByCourseId
+                      }
+                    ]
+                  }
             ]
         }
     ]
