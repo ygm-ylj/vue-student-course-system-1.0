@@ -53,6 +53,8 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const _that = this
+          console.log('准备删除cookie')
+          this.$cookieStore.delCookie('Authorization')
           this.$axios
             .post('login', {'username': this.ruleForm.username, 'password': this.ruleForm.password})
             .then(res => {
@@ -60,6 +62,7 @@ export default {
               console.log(res.headers.authorization)
               console.log(res.data.data.menus)
               this.$cookieStore.setCookie('Authorization', res.headers.authorization, 600)
+              console.log(this.$cookieStore.getCookie('Authorization'))
               localStorage.setItem('menus', JSON.stringify(res.data.data.menus))
               _that.$router.push('/index')
             })

@@ -5,6 +5,7 @@ import Home from '@/components/Home'
 import Login from '@/pages/Login'
 import Index from '@/components/Index'
 import ChooseCourse from '@/pages/Student/ChooseCourse'
+
 import ModifyHomePage from '@/pages/Administrator/ModifyHomePage'
 import viewUser from '@/pages/Administrator/UserManagement/viewUser'
 import viewStudent from '@/pages/Administrator/UserManagement/viewStudent'
@@ -18,6 +19,8 @@ import addTeacher from '@/pages/Administrator/UserManagement/addTeacher'
 import addCourse from '@/pages/Administrator/CourseManagement/addCourse'
 import viewCourse from '@/pages/Administrator/CourseManagement/viewCourse'
 import findCourse from '@/pages/Administrator/CourseManagement/findCourse'
+
+import ViewCourse from '@/pages/Course/ViewCourse'
 
 Vue.use(Router)
 
@@ -65,6 +68,9 @@ export default new Router({
           path: '/ModifyHomePage',
           meta: {
             name: '修改主页内容'
+          path: '/ViewSelected',
+          meta: {
+            name: '查看已选'
           },
           component: MainContent,
           children: [
@@ -229,6 +235,7 @@ export default new Router({
             {
               path: '',
               component: findCourse
+              component: ViewCourse
             }
           ]
         }
