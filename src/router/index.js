@@ -5,6 +5,7 @@ import Home from '@/components/Home'
 import Login from '@/pages/Login'
 import Index from '@/components/Index'
 import ChooseCourse from '@/pages/Student/ChooseCourse'
+import ViewCourse from '@/pages/Course/ViewCourse'
 
 Vue.use(Router)
 
@@ -45,6 +46,19 @@ export default new Router({
             {
               path: '',
               component: ChooseCourse
+            }
+          ]
+        },
+        {
+          path: '/ViewSelected',
+          meta: {
+            name: '查看已选'
+          },
+          component: MainContent,
+          children: [
+            {
+              path: '',
+              component: ViewCourse
             }
           ]
         }
