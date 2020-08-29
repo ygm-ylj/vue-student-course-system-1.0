@@ -64,6 +64,7 @@ export default {
               this.$cookieStore.setCookie('Authorization', res.headers.authorization, 600)
               console.log(this.$cookieStore.getCookie('Authorization'))
               localStorage.setItem('menus', JSON.stringify(res.data.data.menus))
+              this.$store.dispatch('setUsername', res.data.data.studentId)
               _that.$router.push('/index')
             })
         } else {
