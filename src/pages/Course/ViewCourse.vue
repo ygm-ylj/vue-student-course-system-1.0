@@ -1,5 +1,6 @@
 <template>
   <div>
+    <a class="a">你有如下{{total}}门课程选课信息</a>
     <el-table
       :data="tableData.slice((currentPage-1)*pageSize,currentPage*pageSize)"
       style="width: 100%"
@@ -25,8 +26,11 @@
         </template>
       </el-table-column>
     </el-table>
+    <el v-model="value">
+     </el>
     <el-pagination background class="bottom"
-      @current-change="handleCurrentChange" 
+      @current-change="handleCurrentChange"
+      :hide-on-single-page="value"
       :current-page="currentPage" 
       :page-size="pageSize" 
       layout="total, prev, pager, next, jumper"
@@ -42,6 +46,13 @@
 
   .el-table .success-row {
     background: #f0f9eb;
+  }
+
+  .a {
+    font-size: 30px;
+        color: #67C23A;
+        font-family: 楷体;
+        margin-left: 20px;
   }
 </style>
 
@@ -97,7 +108,8 @@ export default {
       tableData: [],
       total: 0,
       currentPage: 1,
-      pageSize: 5
+      pageSize: 5,
+      value: true
     }
   },
   computed: {
